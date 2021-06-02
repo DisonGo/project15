@@ -1,0 +1,9 @@
+<div class="container">
+  <app-sticker class="sticker" 
+    [data] = sticker
+    [stickerTypes] = "stickerTypes"
+    *ngFor="let sticker of stickers"
+  (stickerDelete) = "deleteSticker($event)"
+  (stickerEdited) = "editSticker($event)"></app-sticker>
+  <app-sticker-create-panel [stickerTypes] = "stickerTypes" (stickerCreated) = "createSticker($event)"></app-sticker-create-panel>
+</div>

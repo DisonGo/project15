@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: 'Caveat', cursive;
+}
+
+h2 {
+  margin: 0;
+}
+
+.title {
+  resize: none;
+  background-color: rgb(255, 232, 21);
+  border: none;
+  font-family: 'Caveat', cursive;
+  font-size: 1.8em;
+  height: 1.5em;
+  overflow: hidden;
+  width: 100%;
+  outline: none;
+  text-decoration: underline;
+}
+
+.textarea {
+  resize: none;
+  flex-grow: 1;
+  background-color: rgb(255, 232, 21);
+  border: none;
+  font-family: 'Caveat', cursive;
+  outline: none;
+}
+body{
+  font-size: 16px;
+}
+.hasError{
+  color: red;
+}
