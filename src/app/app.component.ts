@@ -84,9 +84,20 @@ export class AppComponent implements OnInit {
       this.getStickers()
     }
   }
+  cloneArr(arr:any[]) {
+    let semiArr:any = []
+    for (let i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+        semiArr[i] = this.cloneArr(arr[i])
+      } else {
+        semiArr[i] = arr[i]
+      }
+    }
+    return semiArr
+  }
   async getTypes(){
     try{
-      this.stickerTypes = await this.httpServ.getStickerTypes()
+      this.stickerTypes = this.cloneArr(await this.httpServ.getStickerTypes())
       console.log(this.stickerTypes);
       
     }catch(err){

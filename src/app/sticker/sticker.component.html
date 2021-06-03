@@ -1,13 +1,13 @@
 <form [formGroup]="stickerForm" class="container" style="flex-direction: column; height: 100%;gap: 0;"
   [ngStyle]="{'display': editing? 'flex': 'none'}">
-  <textarea type="text" id="title" class="title" placeholder="Введите заголовок" formControlName="title"
+  <textarea type="text"  class="title" placeholder="Введите заголовок" formControlName="title"
     [ngClass]="{hasError:stickerForm.get('title')?.invalid && stickerForm.get('title')?.touched}"></textarea>
-  <textarea type="text" id="text" class="textarea" style="width: 100%;flex-grow: 1;" placeholder="Введите текст"
+  <textarea type="text"  class="textarea" style="width: 100%;flex-grow: 1;" placeholder="Введите текст"
     formControlName="text"
     [ngClass]="{hasError:stickerForm.get('text')?.invalid && stickerForm.get('text')?.touched}"></textarea>
   <div class="container" style="gap: 0;flex-direction: column;">
     <label for="type">Тип заметки</label>
-    <select name="type" id="type" style="width: 50%;" formControlName="type">
+    <select name="type" style="width: 50%;" formControlName="type">
       <option [value]="type.id" *ngFor="let type of stickerTypes">{{type.name}} </option>
     </select>
   </div>

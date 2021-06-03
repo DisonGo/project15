@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { StickerComponent } from './sticker/sticker.component';
 import { StickerCreatePanelComponent } from './sticker-create-panel/sticker-create-panel.component';
 import { StickerTypeControlPanelComponent } from './sticker-type-control-panel/sticker-type-control-panel.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 
@@ -20,6 +21,7 @@ import { HttpClientModule} from '@angular/common/http';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

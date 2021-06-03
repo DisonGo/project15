@@ -35,7 +35,7 @@ export class StickerCreatePanelComponent implements OnInit {
   @Output() stickerCreated = new EventEmitter < Sticker > ();
   addNote() {
     let sticker = this.stickerForm.value 
-    sticker.type = parseInt(sticker.type) 
+    sticker.type = parseInt( sticker.type)
     console.log(this.stickerForm.value );
     
     let buf = sticker.title.split("")

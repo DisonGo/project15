@@ -17,7 +17,7 @@ import { HttpStickerService } from '../shared/services/http-sticker.service';
 })
 export class StickerComponent implements OnInit {
 
-  constructor(private fb: FormBuilder,private stickerServ:HttpStickerService) {}
+  constructor(private fb: FormBuilder) {}
   stickerForm!:FormGroup
   oldTitle!: string;
   oldText!: string;
@@ -52,11 +52,7 @@ export class StickerComponent implements OnInit {
     }
     this.editing = false
   }
-  getTypeId(type:string){
-    return this.stickerTypes.find(el=>{
-      return (el.name == type)
-    })?.id
-  }
+  
   deleteSticker() {
     this.stickerDelete.emit(this.data.id)
   }
