@@ -57,15 +57,6 @@ export class StickerTypeControlPanelComponent implements OnInit {
       return (el.id == id)
     })?.name
   }
-  editType(){
-    let values = this.stickerTypeForm.value
-    let newType = {
-      id: parseInt(values.type),
-      name: values.name
-    }
-    this.stickerServ.editStickerType(newType)
-    this.stickerTypeEdited.emit()
-  }
   setInputValue(id:number){ 
     this.stickerServ.getStickerType(id).then(res=>{
       this.stickerTypeForm.get('name')?.setValue(res.name)
@@ -75,7 +66,7 @@ export class StickerTypeControlPanelComponent implements OnInit {
     let id = parseInt(this.stickerTypeForm.get('type')?.value)
     this.setInputValue(id)
   }
-  createType(){
+  async createType(){
     let values = this.stickerTypeForm.value
     this.stickerTypes.sort((a,b)=>{
       return a.id-b.id
@@ -84,27 +75,33 @@ export class StickerTypeControlPanelComponent implements OnInit {
       id: this.stickerTypes[this.stickerTypes.length-1].id + 1,
       name: values.name
     }
-    this.stickerServ.postStickerType(newType)
+    await this.stickerServ.postStickerType(newType)
     this.stickerTypePosted.emit()
+    this.stickerTypeForm.get('name')?.setValue('None')
   }
-  deleteType(){
+  async editType(){
+    let values = this.stickerTypeForm.value
+    let newType = {
+      id: parseInt(values.type),
+      name: values.name
+    }
+    await this.stickerServ.editStickerType(newType)
+    this.stickerTypeEdited.emit()
+    this.stickerTypeForm.get('name')?.setValue('None')
+  }
+  async deleteType(){
     let values = this.stickerTypeForm.value
     let id = parseInt(values.type)
-    this.stickerServ.deleteStickerType(id)
+    await this.stickerServ.deleteStickerType(id)
     this.stickerTypeDeleted.emit()
+    this.stickerTypeForm.get('name')?.setValue('None')
   }
-  public ngOnChanges(changes: SimpleChanges) {
-    if ('stickerTypes' in changes) {
-        console.log(this.stickerTypes);
-        
-     }
-  }   
   ngOnInit(): void {
     console.log(this.stickerTypes);
     
     const controls = {
       type: [0,[Validators.required]],
-      name: [null,[Validators.required]]
+      name: [null,[Validators.required,Validators.maxLength(8)]]
     }
     this.stickerTypeForm = this.fb.group(controls)
     this.stickerTypeForm.get('type')?.setValue(0)

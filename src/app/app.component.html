@@ -8,7 +8,7 @@
   <div>
     <app-sticker-create-panel [stickerTypes] = "stickerTypes" (stickerCreated) = "createSticker($event)">
     </app-sticker-create-panel>
-    <app-sticker-type-control-panel (stickerTypeEdited) = "getTypes()" (stickerTypePosted) = "getTypes()" (stickerTypeDeleted) = "getTypes()" [stickerTypes] = "stickerTypes">
+    <app-sticker-type-control-panel (stickerTypeEdited) = "typeEdit()" (stickerTypePosted) = "typeEdit()" (stickerTypeDeleted) = "typeEdit()" [stickerTypes] = "stickerTypes">
     </app-sticker-type-control-panel>
   </div>
 </div>

@@ -16,8 +16,8 @@
         formControlName="name"
         [ngClass]="{'hasError':stickerTypeForm.get('name')?.invalid && stickerTypeForm.get('name')?.touched}"></textarea>
         <div class="container" style="flex-direction: row;gap: 0;">
-          <button type="submit" class="editSubmitBut" style="border-top-left-radius:15px" (click)="editType()">Изменить текущий</button>
-          <button type="submit" class="editSubmitBut" style="border-top-right-radius:15px" (click)="createType()">Сохранить как новый</button>
+          <button type="submit" class="editSubmitBut" [disabled] = "stickerTypeForm.invalid" style="border-top-left-radius:15px" (click)="editType()">Изменить текущий</button>
+          <button type="submit" class="editSubmitBut" [disabled] = "stickerTypeForm.invalid" style="border-top-right-radius:15px" (click)="createType()">Сохранить как новый</button>
           <button type="submit" class="editSubmitBut" style="border-bottom-right-radius:15px ;
           border-bottom-left-radius:15px; width: 100%;
           color: red;" (click)="deleteType()">Удалить</button>

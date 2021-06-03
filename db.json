@@ -11,17 +11,17 @@
     {
       "title": "Sadas",
       "text": "sadasd",
-      "type": 2,
+      "type": 3,
       "date": 1622642498212,
       "id": 10,
-      "lastEdited": 1622713358026
+      "lastEdited": 1622740115849
     },
     {
       "title": "Фыsdadaвф",
       "text": "ывфвфвфвфasdasв",
-      "type": 0,
+      "type": 2,
       "date": 1622713222121,
-      "lastEdited": 1622725025303,
+      "lastEdited": 1622740097022,
       "id": 12
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "id": 2,
-      "name": "Times"
+      "name": "Time"
     }
   ]
 }

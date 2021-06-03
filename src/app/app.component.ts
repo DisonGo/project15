@@ -48,8 +48,8 @@ export class AppComponent implements OnInit {
       {
         this.idCounter = 0
       }
-      this.stickers.forEach(async el=>{
-        await this.httpServ.getStickerType(el.type).then(res=>el.type = res.name)
+      this.stickers.forEach(el=>{
+        this.httpServ.getStickerType(el.type).then(res=>el.type = res.name)
       })
     }
   }
@@ -84,26 +84,31 @@ export class AppComponent implements OnInit {
       this.getStickers()
     }
   }
-  cloneArr(arr:any[]) {
-    let semiArr:any = []
-    for (let i = 0; i < arr.length; i++) {
-      if (Array.isArray(arr[i])) {
-        semiArr[i] = this.cloneArr(arr[i])
-      } else {
-        semiArr[i] = arr[i]
-      }
-    }
-    return semiArr
-  }
+  // cloneArr(arr:any[]) {
+  //   let semiArr:any = []
+  //   for (let i = 0; i < arr.length; i++) {
+  //     if (Array.isArray(arr[i])) {
+  //       semiArr[i] = this.cloneArr(arr[i])
+  //     } else {
+  //       semiArr[i] = arr[i]
+  //     }
+  //   }
+  //   return semiArr
+  // }
   async getTypes(){
     try{
-      this.stickerTypes = this.cloneArr(await this.httpServ.getStickerTypes())
+      this.stickerTypes = await this.httpServ.getStickerTypes()
+      // this.stickerTypes = this.cloneArr(await this.httpServ.getStickerTypes())
       console.log(this.stickerTypes);
       
     }catch(err){
       console.log(err);
     }
     
+  }
+  async typeEdit(){
+    await this.getTypes()
+    this.getStickers()    
   }
   ngOnInit(){
     this.getStickers()
