@@ -3,34 +3,34 @@
     {
       "title": "Sadasd",
       "text": "sadas",
-      "type": "0",
+      "type": 1,
       "date": 1622565457013,
       "id": 1,
-      "lastEdited": 1622645007684
+      "lastEdited": 1622713350518
     },
     {
       "title": "Sadas",
       "text": "sadasd",
-      "type": "2",
+      "type": 2,
       "date": 1622642498212,
       "id": 10,
-      "lastEdited": 1622645059331
+      "lastEdited": 1622713358026
     },
     {
-      "title": "Dsadada",
-      "text": "asdad",
-      "type": "0",
-      "date": 1622645113290,
-      "lastEdited": 1622645206066,
-      "id": 11
-    },
-    {
-      "title": "Sadda",
-      "text": "sdsadsada",
-      "type": 2,
-      "date": 1622645673676,
-      "lastEdited": 1622645673676,
+      "title": "Фывф",
+      "text": "ывфвфвфвфв",
+      "type": 0,
+      "date": 1622713222121,
+      "lastEdited": 1622715357329,
       "id": 12
+    },
+    {
+      "title": "Sdasd",
+      "text": "asdas",
+      "type": 2,
+      "date": 1622713589528,
+      "id": 7,
+      "lastEdited": 1622713694782
     }
   ],
   "types": [

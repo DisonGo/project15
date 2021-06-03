@@ -30,7 +30,7 @@ export class StickerComponent implements OnInit {
   @Output() stickerEdited = new EventEmitter <Sticker>();
   @Output() stickerDelete = new EventEmitter <number>();
   turnOnEditing(){
-    this.initId = this.getTypeId(this.initId)
+    // this.initId = this.getTypeId(this.initId)
     this.editing = true
     this.stickerForm.get('title')?.setValue(this.data.title)
     this.stickerForm.get('text')?.setValue(this.data.text)
@@ -44,7 +44,7 @@ export class StickerComponent implements OnInit {
       let values = this.stickerForm.value
       this.data.title = values.title
       this.data.text = values.text
-      this.data.type = values.type
+      this.data.type = parseInt(values.type)
       this.data.lastEdited = Date.now()
       this.stickerEdited.emit(this.data)
     }else{
@@ -69,6 +69,7 @@ export class StickerComponent implements OnInit {
     this.stickerForm = this.fb.group(controls)
     let buf = Object.assign({}, this.data)
     this.initId = this.data.type
+    
   }
 
 }
